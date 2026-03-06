@@ -1,0 +1,44 @@
+[
+  {
+    "ambience_id": 1,
+    "title": "Forest Awakening",
+    "type": "Focus",
+    "time": "3 min",
+    "images": "assets/png/forest.webp"
+  },
+  {
+    "ambience_id": 2,
+    "title": "Sunset Lake",
+    "type": "Calm",
+    "time": "2 min",
+    "images": "assets/png/lake.webp"
+  },
+  {
+    "ambience_id": 3,
+    "title": "Mountain Stillness",
+    "type": "Focus",
+    "time": "3 min",
+    "images": "assets/png/mountain.webp"
+  },
+  {
+    "ambience_id": 4,
+    "title": "Zen Garden",
+    "type": "Reset",
+    "time": "3 min",
+    "images": "assets/png/zen.webp"
+  },
+  {
+    "ambience_id": 5,
+    "title": "Ocean Waves",
+    "type": "Sleep",
+    "time": "2 min",
+    "images": "assets/png/waves.webp"
+  },
+  {
+    "ambience_id": 6,
+    "title": "Misty Morning",
+    "type": "Calm",
+    "time": "3 min",
+    "images": "assets/png/misty.webp"
+  }
+]

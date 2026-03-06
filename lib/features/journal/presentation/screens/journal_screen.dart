@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:medi_app/features/ambience/model/ambience_model.dart';
+import 'package:medi_app/features/ambience/data/model/ambience_model.dart';
 import 'package:medi_app/features/journal/presentation/widgets/journal_card.dart';
 import 'package:medi_app/gen/colors.gen.dart';
 import 'package:medi_app/utils/styles/app_text.dart';

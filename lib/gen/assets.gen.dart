@@ -21,6 +21,16 @@ class $AssetsColorsGen {
   List<String> get values => [colors];
 }
 
+class $AssetsDataGen {
+  const $AssetsDataGen();
+
+  /// File path: assets/data/ambience_data.json
+  String get ambienceData => 'assets/data/ambience_data.json';
+
+  /// List of all assets
+  List<String> get values => [ambienceData];
+}
+
 class $AssetsPngGen {
   const $AssetsPngGen();
 
@@ -50,6 +60,7 @@ class Assets {
   const Assets._();
 
   static const $AssetsColorsGen colors = $AssetsColorsGen();
+  static const $AssetsDataGen data = $AssetsDataGen();
   static const $AssetsPngGen png = $AssetsPngGen();
 }
 

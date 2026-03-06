@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:medi_app/features/ambience/screens/ambience_screen.dart';
+import 'package:medi_app/features/ambience/presentation/screens/ambience_screen.dart';
 import 'package:medi_app/features/journal/presentation/screens/journal_screen.dart';
 
 class AppNavigator {
