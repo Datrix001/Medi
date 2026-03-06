@@ -4,41 +4,65 @@
     "title": "Forest Awakening",
     "type": "Focus",
     "time": "3 min",
-    "images": "assets/png/forest.webp"
+    "images": "assets/png/forest.webp",
+    "ambience_details": {
+      "details": "Experience the meditative calm of a traditional zen garden. Flowing water, balanced stones, and peaceful contemplation.",
+      "sensory_elements": ["Breeze", "Warm Ligth", "Binaural"]
+    }
   },
   {
     "ambience_id": 2,
     "title": "Sunset Lake",
     "type": "Calm",
     "time": "2 min",
-    "images": "assets/png/lake.webp"
+    "images": "assets/png/lake.webp",
+    "ambience_details": {
+      "details": "Experience the meditative calm of a traditional zen garden. Flowing water, balanced stones, and peaceful contemplation.",
+      "sensory_elements": ["Warm Ligth", "Soft Rain", "Breeze"]
+    }
   },
   {
     "ambience_id": 3,
     "title": "Mountain Stillness",
     "type": "Focus",
     "time": "3 min",
-    "images": "assets/png/mountain.webp"
+    "images": "assets/png/mountain.webp",
+    "ambience_details": {
+      "details": "Experience the meditative calm of a traditional zen garden. Flowing water, balanced stones, and peaceful contemplation.",
+      "sensory_elements": ["Breeze", "Binaural", "Mist"]
+    }
   },
   {
     "ambience_id": 4,
     "title": "Zen Garden",
     "type": "Reset",
     "time": "3 min",
-    "images": "assets/png/zen.webp"
+    "images": "assets/png/zen.webp",
+    "ambience_details": {
+      "details": "Experience the meditative calm of a traditional zen garden. Flowing water, balanced stones, and peaceful contemplation.",
+      "sensory_elements": ["Soft Rain", "Mist", "Warm Ligth"]
+    }
   },
   {
     "ambience_id": 5,
     "title": "Ocean Waves",
     "type": "Sleep",
     "time": "2 min",
-    "images": "assets/png/waves.webp"
+    "images": "assets/png/waves.webp",
+    "ambience_details": {
+      "details": "Experience the meditative calm of a traditional zen garden. Flowing water, balanced stones, and peaceful contemplation.",
+      "sensory_elements": ["Breeze", "Soft Rain", "Binaural"]
+    }
   },
   {
     "ambience_id": 6,
     "title": "Misty Morning",
     "type": "Calm",
     "time": "3 min",
-    "images": "assets/png/misty.webp"
+    "images": "assets/png/misty.webp",
+    "ambience_details": {
+      "details": "Experience the meditative calm of a traditional zen garden. Flowing water, balanced stones, and peaceful contemplation.",
+      "sensory_elements": ["Soft Rain", "Mist", "Breeze"]
+    }
   }
 ]

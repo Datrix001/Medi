@@ -13,6 +13,9 @@ AmbienceModel _$AmbienceModelFromJson(Map<String, dynamic> json) =>
       type: $enumDecode(_$AmbienceTypeEnumMap, json['type']),
       time: json['time'] as String,
       image: json['images'] as String,
+      ambienceDetails: AmbienceDetails.fromJson(
+        json['ambience_details'] as Map<String, dynamic>,
+      ),
     );
 
 Map<String, dynamic> _$AmbienceModelToJson(AmbienceModel instance) =>
@@ -22,6 +25,7 @@ Map<String, dynamic> _$AmbienceModelToJson(AmbienceModel instance) =>
       'type': _$AmbienceTypeEnumMap[instance.type]!,
       'time': instance.time,
       'images': instance.image,
+      'ambience_details': instance.ambienceDetails,
     };
 
 const _$AmbienceTypeEnumMap = {
@@ -31,3 +35,17 @@ const _$AmbienceTypeEnumMap = {
   AmbienceType.sleep: 'Sleep',
   AmbienceType.rest: 'Reset',
 };
+
+AmbienceDetails _$AmbienceDetailsFromJson(Map<String, dynamic> json) =>
+    AmbienceDetails(
+      details: json['details'] as String,
+      sensoryElements: (json['sensory_elements'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
+    );
+
+Map<String, dynamic> _$AmbienceDetailsToJson(AmbienceDetails instance) =>
+    <String, dynamic>{
+      'details': instance.details,
+      'sensory_elements': instance.sensoryElements,
+    };

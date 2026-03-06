@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:medi_app/features/ambience/data/model/ambience_model.dart';
 import 'package:medi_app/features/ambience/presentation/cubit/ambience_cubit.dart';
 import 'package:medi_app/features/ambience/presentation/cubit/ambience_state.dart';
+import 'package:medi_app/features/ambience/presentation/screens/ambience_details_screen.dart';
 import 'package:medi_app/features/ambience/presentation/widgets/ambinece_card.dart';
 import 'package:medi_app/features/journal/presentation/screens/journal_screen.dart';
 import 'package:medi_app/gen/assets.gen.dart';
@@ -170,13 +171,20 @@ class _AmbienceScreenState extends State<AmbienceScreen> {
                             itemBuilder: (context, index) {
                               final ambience = filteredAmbiences[index];
 
-                              return Padding(
-                                padding: EdgeInsets.only(bottom: 10.h),
-                                child: AmbineceCard(
-                                  image: ambience.image,
-                                  title: ambience.title,
-                                  time: ambience.time,
-                                  type: ambience.type,
+                              return GestureDetector(
+                                onTap: () => context.push(
+                                  AmbienceDetailsScreen.routeName,
+                                  extra: ambience,
+                                ),
+
+                                child: Padding(
+                                  padding: EdgeInsets.only(bottom: 10.h),
+                                  child: AmbineceCard(
+                                    image: ambience.image,
+                                    title: ambience.title,
+                                    time: ambience.time,
+                                    type: ambience.type,
+                                  ),
                                 ),
                               );
                             },
