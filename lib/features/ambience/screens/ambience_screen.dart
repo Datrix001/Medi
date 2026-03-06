@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medi_app/features/ambience/model/ambience_model.dart';
 import 'package:medi_app/features/ambience/widgets/ambinece_card.dart';
+import 'package:medi_app/features/journal/presentation/screens/journal_screen.dart';
 import 'package:medi_app/gen/assets.gen.dart';
 import 'package:medi_app/gen/colors.gen.dart';
 import 'package:medi_app/utils/styles/app_text.dart';
@@ -75,7 +77,12 @@ class _AmbienceScreenState extends State<AmbienceScreen> {
       appBar: AppBar(
         backgroundColor: AppColors.transparent,
         title: appTextH2('Medi'),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.book))],
+        actions: [
+          IconButton(
+            onPressed: () => context.push(JournalScreen.routeName),
+            icon: Icon(Icons.book),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20.w),
