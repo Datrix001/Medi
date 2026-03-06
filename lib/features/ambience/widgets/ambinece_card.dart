@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:medi_app/features/ambience/screens/ambience_screen.dart';
+import 'package:medi_app/features/ambience/model/ambience_model.dart';
 import 'package:medi_app/gen/colors.gen.dart';
 import 'package:medi_app/utils/styles/app_text.dart';
 
@@ -73,7 +73,7 @@ class _AmbineceCardState extends State<AmbineceCard> {
     );
   }
 
-  Widget typeAndColor(AmbienceType type) {
+  Widget? typeAndColor(AmbienceType type) {
     switch (type) {
       case AmbienceType.calm:
         return Container(
@@ -117,6 +117,8 @@ class _AmbineceCardState extends State<AmbineceCard> {
           ),
           child: appTextB1('Sleep', color: AppColors.red.withAlpha(120)),
         );
+      case AmbienceType.all:
+        return null;
     }
   }
 }

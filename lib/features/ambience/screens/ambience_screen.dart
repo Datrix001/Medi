@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:medi_app/features/ambience/model/ambience_model.dart';
 import 'package:medi_app/features/ambience/widgets/ambinece_card.dart';
 import 'package:medi_app/gen/assets.gen.dart';
 import 'package:medi_app/gen/colors.gen.dart';
@@ -16,6 +17,11 @@ class AmbienceScreen extends StatefulWidget {
 
 class _AmbienceScreenState extends State<AmbienceScreen> {
   final ValueNotifier<int> currentIndex = ValueNotifier(0);
+  final ValueNotifier<AmbienceType> currentAmbience = ValueNotifier(
+    AmbienceType.all,
+  );
+  final TextEditingController searchController = TextEditingController();
+  final ValueNotifier<String> searchQuery = ValueNotifier('');
   final List<String> typesOfAmbiences = [
     'All',
     'Focus',
@@ -24,6 +30,44 @@ class _AmbienceScreenState extends State<AmbienceScreen> {
     'Reset',
   ];
 
+  final List<AmbienceModel> ambiences = [
+    AmbienceModel(
+      image: Assets.png.forest.path,
+      title: "Forest Awakening",
+      time: "3 min",
+      type: AmbienceType.focus,
+    ),
+    AmbienceModel(
+      image: Assets.png.lake.path,
+      title: "Sunset Lake",
+      time: "2 min",
+      type: AmbienceType.focus,
+    ),
+    AmbienceModel(
+      image: Assets.png.mountain.path,
+      title: "Mountain Stillness",
+      time: "3 min",
+      type: AmbienceType.rest,
+    ),
+    AmbienceModel(
+      image: Assets.png.zen.path,
+      title: "Zen Garden",
+      time: "3 min",
+      type: AmbienceType.rest,
+    ),
+    AmbienceModel(
+      image: Assets.png.waves.path,
+      title: "Ocean Waves",
+      time: "2 min",
+      type: AmbienceType.calm,
+    ),
+    AmbienceModel(
+      image: Assets.png.misty.path,
+      title: "Misty Morning",
+      time: "2 min",
+      type: AmbienceType.sleep,
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,17 +86,21 @@ class _AmbienceScreenState extends State<AmbienceScreen> {
                 color: AppColors.black.withAlpha(10),
                 borderRadius: BorderRadius.circular(15.r),
               ),
-
-              padding: EdgeInsets.all(10.w),
-              child: Row(
-                children: [
-                  Icon(Icons.search, color: AppColors.black.withAlpha(70)),
-                  10.horizontalSpace,
-                  appTextB1(
-                    "Search ambiences...",
+              padding: EdgeInsets.symmetric(horizontal: 12.w),
+              child: TextField(
+                textInputAction: TextInputAction.search,
+                controller: searchController,
+                onChanged: (value) {
+                  searchQuery.value = value;
+                },
+                decoration: InputDecoration(
+                  icon: Icon(
+                    Icons.search,
                     color: AppColors.black.withAlpha(70),
                   ),
-                ],
+                  hintText: "Search ambiences...",
+                  border: InputBorder.none,
+                ),
               ),
             ),
             20.verticalSpace,
@@ -69,6 +117,7 @@ class _AmbienceScreenState extends State<AmbienceScreen> {
                       return GestureDetector(
                         onTap: () {
                           currentIndex.value = index;
+                          currentAmbience.value = AmbienceType.values[index];
                         },
                         child: Container(
                           margin: EdgeInsets.only(right: 8.w),
@@ -96,63 +145,63 @@ class _AmbienceScreenState extends State<AmbienceScreen> {
               },
             ),
             20.verticalSpace,
+            ValueListenableBuilder(
+              valueListenable: currentAmbience,
+              builder: (context, type, child) {
+                return ValueListenableBuilder(
+                  valueListenable: searchQuery,
+                  builder: (context, query, child) {
+                    final filteredAmbiences = ambiences.where((a) {
+                      final matchesType =
+                          currentAmbience.value == AmbienceType.all ||
+                          a.type == currentAmbience.value;
 
-            AmbineceCard(
-              image: Assets.png.forest.path,
-              title: "Forest Awakeing",
-              time: "3 min",
-              type: AmbienceType.focus,
-            ),
-            10.verticalSpace,
+                      final matchesSearch =
+                          a.title.toLowerCase().contains(query.toLowerCase()) ||
+                          a.type.name.toLowerCase().contains(
+                            query.toLowerCase(),
+                          );
 
-            AmbineceCard(
-              image: Assets.png.lake.path,
+                      return matchesType && matchesSearch;
+                    }).toList();
 
-              title: "Sunset Lake",
-              time: "2 min",
-              type: AmbienceType.focus,
-            ),
-            10.verticalSpace,
+                    if (filteredAmbiences.isEmpty) {
+                      return Padding(
+                        padding: EdgeInsets.only(top: 50.h),
+                        child: appTextB1("No ambiences found"),
+                      );
+                    }
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: filteredAmbiences.length,
+                      itemBuilder: (context, index) {
+                        final ambience = filteredAmbiences[index];
 
-            AmbineceCard(
-              image: Assets.png.mountain.path,
-
-              title: "Mountain Stillness",
-              time: "3 min",
-              type: AmbienceType.rest,
-            ),
-            10.verticalSpace,
-
-            AmbineceCard(
-              image: Assets.png.zen.path,
-
-              title: "Zen Garden",
-              time: "3 min",
-              type: AmbienceType.rest,
-            ),
-
-            10.verticalSpace,
-            AmbineceCard(
-              image: Assets.png.waves.path,
-
-              title: "Ocean Waves",
-              time: "2 min",
-              type: AmbienceType.calm,
-            ),
-            10.verticalSpace,
-
-            AmbineceCard(
-              image: Assets.png.misty.path,
-
-              title: "Misty Morning",
-              time: "2 min",
-              type: AmbienceType.sleep,
+                        return Padding(
+                          padding: EdgeInsets.only(bottom: 10.h),
+                          child: AmbineceCard(
+                            image: ambience.image,
+                            title: ambience.title,
+                            time: ambience.time,
+                            type: ambience.type,
+                          ),
+                        );
+                      },
+                    );
+                  },
+                );
+              },
             ),
           ],
         ),
       ),
     );
   }
-}
 
-enum AmbienceType { focus, calm, sleep, rest }
+  @override
+  void dispose() {
+    searchController.dispose();
+    super.dispose();
+  }
+}
