@@ -97,7 +97,8 @@ class _AmbienceDetailsScreenState extends State<AmbienceDetailsScreen> {
                   20.verticalSpace,
                   CustomButton(
                     buttonText: "Start Session",
-                    onTap: () => context.push(ReflectionScreen.routeName),
+                    onTap: () =>
+                        context.push(ReflectionScreen.routeName, extra: model),
                   ),
                 ],
               ),

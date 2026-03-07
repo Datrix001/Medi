@@ -4,13 +4,9 @@ import 'package:medi_app/gen/colors.gen.dart';
 import 'package:medi_app/utils/styles/app_text.dart';
 
 class CustomButton extends StatefulWidget {
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final String buttonText;
-  const CustomButton({
-    super.key,
-    required this.buttonText,
-    required this.onTap,
-  });
+  const CustomButton({super.key, required this.buttonText, this.onTap});
 
   @override
   State<CustomButton> createState() => _CustomButtonState();

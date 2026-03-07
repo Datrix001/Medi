@@ -7,13 +7,13 @@ import 'package:medi_app/utils/utils.dart';
 
 class JournalCard extends StatelessWidget {
   final String date;
-  final AmbienceType ambienceType;
+  final FeelingsType feelingsType;
   final String title;
   final String body;
   const JournalCard({
     super.key,
     required this.date,
-    required this.ambienceType,
+    required this.feelingsType,
     required this.title,
     required this.body,
   });
@@ -41,7 +41,7 @@ class JournalCard extends StatelessWidget {
             children: [
               appTextB2(date, color: AppColors.black.withAlpha(90)),
               Spacer(),
-              ?Utils.typeAndColor(ambienceType),
+              ?Utils.typeAndColor1(feelingsType, true),
             ],
           ),
           appTextS3(title),

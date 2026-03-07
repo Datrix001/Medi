@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 import 'package:medi_app/features/ambience/data/model/ambience_model.dart';
 import 'package:medi_app/gen/colors.gen.dart';
 import 'package:medi_app/utils/styles/app_text.dart';
@@ -120,6 +121,28 @@ class Utils {
             color: isSelected ? AppColors.white : AppColors.red.withAlpha(120),
           ),
         );
+    }
+  }
+
+  static String formatJournalDate(String date) {
+    final DateTime journalDate = DateTime.parse(date);
+    final DateTime now = DateTime.now();
+
+    final DateTime today = DateTime(now.year, now.month, now.day);
+    final DateTime yesterday = today.subtract(const Duration(days: 1));
+
+    final DateTime checkDate = DateTime(
+      journalDate.year,
+      journalDate.month,
+      journalDate.day,
+    );
+
+    if (checkDate == today) {
+      return "Today";
+    } else if (checkDate == yesterday) {
+      return "Yesterday";
+    } else {
+      return DateFormat('MMMM d, yyyy').format(journalDate);
     }
   }
 }

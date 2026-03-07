@@ -26,7 +26,11 @@ class AppNavigator {
       ),
       GoRoute(
         path: ReflectionScreen.routeName,
-        builder: (context, state) => ReflectionScreen(),
+        builder: (context, state) {
+          final ambienceModel = state.extra as AmbienceModel;
+
+          return ReflectionScreen(model: ambienceModel);
+        },
       ),
     ],
   );

@@ -9,6 +9,7 @@ class AmbienceCubit extends Cubit<AmbienceState> {
   AmbienceCubit({required this.repository}) : super(AmbienceInitialState());
 
   Future<void> getData() async {
+    emit(AmbienceLoadingState());
     try {
       final result = await repository.getJsonData();
       emit(AmbienceSuccessState(model: result));
