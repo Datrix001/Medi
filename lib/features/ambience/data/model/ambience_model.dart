@@ -12,6 +12,7 @@ class AmbienceModel {
 
   @JsonKey(name: 'images')
   final String image;
+  final String audioPath;
 
   final AmbienceDetails ambienceDetails;
 
@@ -22,6 +23,7 @@ class AmbienceModel {
     required this.time,
     required this.image,
     required this.ambienceDetails,
+    required this.audioPath,
   });
 
   factory AmbienceModel.fromJson(Map<String, dynamic> json) =>

@@ -16,6 +16,7 @@ AmbienceModel _$AmbienceModelFromJson(Map<String, dynamic> json) =>
       ambienceDetails: AmbienceDetails.fromJson(
         json['ambience_details'] as Map<String, dynamic>,
       ),
+      audioPath: json['audio_path'] as String,
     );
 
 Map<String, dynamic> _$AmbienceModelToJson(AmbienceModel instance) =>
@@ -25,6 +26,7 @@ Map<String, dynamic> _$AmbienceModelToJson(AmbienceModel instance) =>
       'type': _$AmbienceTypeEnumMap[instance.type]!,
       'time': instance.time,
       'images': instance.image,
+      'audio_path': instance.audioPath,
       'ambience_details': instance.ambienceDetails,
     };
 

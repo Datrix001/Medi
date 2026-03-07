@@ -11,6 +11,19 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsAudioGen {
+  const $AssetsAudioGen();
+
+  /// File path: assets/audio/forest.mp3
+  String get forest => 'assets/audio/forest.mp3';
+
+  /// File path: assets/audio/piano.mp3
+  String get piano => 'assets/audio/piano.mp3';
+
+  /// List of all assets
+  List<String> get values => [forest, piano];
+}
+
 class $AssetsColorsGen {
   const $AssetsColorsGen();
 
@@ -59,6 +72,7 @@ class $AssetsPngGen {
 class Assets {
   const Assets._();
 
+  static const $AssetsAudioGen audio = $AssetsAudioGen();
   static const $AssetsColorsGen colors = $AssetsColorsGen();
   static const $AssetsDataGen data = $AssetsDataGen();
   static const $AssetsPngGen png = $AssetsPngGen();

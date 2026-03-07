@@ -8,6 +8,7 @@ import 'package:medi_app/features/ambience/presentation/cubit/ambience_cubit.dar
 import 'package:medi_app/features/journal/data/datasources/journal_local_dataSources.dart';
 import 'package:medi_app/features/journal/data/repository/journal_repository_impl.dart';
 import 'package:medi_app/features/journal/presentation/cubit/journal_cubit.dart';
+import 'package:medi_app/features/player/presentation/cubit/player_cubit.dart';
 import 'package:medi_app/utils/navigation/app_navigator.dart';
 
 Future<void> main() async {
@@ -40,6 +41,7 @@ class MainApp extends StatelessWidget {
             ),
           ),
         ),
+        BlocProvider(create: (context) => PlayerCubit()),
       ],
       child: ScreenUtilInit(
         designSize: const Size(360, 690),

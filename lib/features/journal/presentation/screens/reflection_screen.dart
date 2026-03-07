@@ -61,7 +61,7 @@ class _ReflectionScreenState extends State<ReflectionScreen> {
           }
         },
         builder: (context, state) {
-          return Padding(
+          return SingleChildScrollView(
             padding: EdgeInsets.all(20.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

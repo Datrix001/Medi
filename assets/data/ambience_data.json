@@ -5,6 +5,7 @@
     "type": "Focus",
     "time": "3 min",
     "images": "assets/png/forest.webp",
+    "audio_path": "assets/audio/forest.mp3",
     "ambience_details": {
       "details": "Experience the meditative calm of a traditional zen garden. Flowing water, balanced stones, and peaceful contemplation.",
       "sensory_elements": ["Breeze", "Warm Ligth", "Binaural"]
@@ -16,6 +17,7 @@
     "type": "Calm",
     "time": "2 min",
     "images": "assets/png/lake.webp",
+    "audio_path": "assets/audio/forest.mp3",
     "ambience_details": {
       "details": "Experience the meditative calm of a traditional zen garden. Flowing water, balanced stones, and peaceful contemplation.",
       "sensory_elements": ["Warm Ligth", "Soft Rain", "Breeze"]
@@ -27,6 +29,7 @@
     "type": "Focus",
     "time": "3 min",
     "images": "assets/png/mountain.webp",
+    "audio_path": "assets/audio/forest.mp3",
     "ambience_details": {
       "details": "Experience the meditative calm of a traditional zen garden. Flowing water, balanced stones, and peaceful contemplation.",
       "sensory_elements": ["Breeze", "Binaural", "Mist"]
@@ -38,6 +41,7 @@
     "type": "Reset",
     "time": "3 min",
     "images": "assets/png/zen.webp",
+    "audio_path": "assets/audio/forest.mp3",
     "ambience_details": {
       "details": "Experience the meditative calm of a traditional zen garden. Flowing water, balanced stones, and peaceful contemplation.",
       "sensory_elements": ["Soft Rain", "Mist", "Warm Ligth"]
@@ -49,6 +53,7 @@
     "type": "Sleep",
     "time": "2 min",
     "images": "assets/png/waves.webp",
+    "audio_path": "assets/audio/forest.mp3",
     "ambience_details": {
       "details": "Experience the meditative calm of a traditional zen garden. Flowing water, balanced stones, and peaceful contemplation.",
       "sensory_elements": ["Breeze", "Soft Rain", "Binaural"]
@@ -60,6 +65,7 @@
     "type": "Calm",
     "time": "3 min",
     "images": "assets/png/misty.webp",
+    "audio_path": "assets/audio/forest.mp3",
     "ambience_details": {
       "details": "Experience the meditative calm of a traditional zen garden. Flowing water, balanced stones, and peaceful contemplation.",
       "sensory_elements": ["Soft Rain", "Mist", "Breeze"]
