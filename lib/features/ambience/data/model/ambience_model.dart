@@ -60,16 +60,4 @@ enum AmbienceType {
   rest,
 }
 
-// enum SensoryType {
-//   @JsonValue('Warm Light')
-//   warmLight,
-
-//   @JsonValue('Soft Rain')
-//   softRain,
-
-//   @JsonValue('Binarual')
-//   binaural,
-
-//   @JsonValue('Mist')
-//   mist,
-// }
+enum FeelingsType { calm, grounded, energized, sleepy }

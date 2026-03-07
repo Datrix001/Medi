@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medi_app/features/ambience/data/model/ambience_model.dart';
 import 'package:medi_app/features/ambience/presentation/widgets/sensory_elements.dart';
+import 'package:medi_app/features/journal/presentation/screens/reflection_screen.dart';
 import 'package:medi_app/gen/assets.gen.dart';
 import 'package:medi_app/gen/colors.gen.dart';
 import 'package:medi_app/utils/custom_button.dart';
@@ -93,7 +95,10 @@ class _AmbienceDetailsScreenState extends State<AmbienceDetailsScreen> {
                   ),
 
                   20.verticalSpace,
-                  CustomButton(buttonText: "Start Session"),
+                  CustomButton(
+                    buttonText: "Start Session",
+                    onTap: () => context.push(ReflectionScreen.routeName),
+                  ),
                 ],
               ),
             ),

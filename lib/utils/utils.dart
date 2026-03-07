@@ -53,4 +53,73 @@ class Utils {
         return null;
     }
   }
+
+  static Widget? typeAndColor1(FeelingsType type, bool isSelected) {
+    switch (type) {
+      case FeelingsType.calm:
+        return Container(
+          padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
+
+          decoration: BoxDecoration(
+            color: isSelected
+                ? AppColors.green.withAlpha(150)
+                : AppColors.green.withAlpha(90),
+            borderRadius: BorderRadius.circular(15.r),
+          ),
+          child: appTextB1(
+            'Calm',
+            color: isSelected ? AppColors.white : AppColors.green,
+          ),
+        );
+
+      case FeelingsType.sleepy:
+        return Container(
+          padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
+          decoration: BoxDecoration(
+            color: isSelected
+                ? AppColors.purple.withAlpha(150)
+                : AppColors.purple.withAlpha(90),
+            borderRadius: BorderRadius.circular(15.r),
+          ),
+          child: appTextB1(
+            'Grounded',
+            color: isSelected
+                ? AppColors.white
+                : AppColors.purple.withAlpha(110),
+          ),
+        );
+
+      case FeelingsType.grounded:
+        return Container(
+          padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
+
+          decoration: BoxDecoration(
+            color: isSelected
+                ? AppColors.blue.withAlpha(150)
+                : AppColors.blue.withAlpha(90),
+            borderRadius: BorderRadius.circular(15.r),
+          ),
+          child: appTextB1(
+            'Energized',
+            color: isSelected ? AppColors.white : AppColors.blue.withAlpha(120),
+          ),
+        );
+
+      case FeelingsType.energized:
+        return Container(
+          padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
+
+          decoration: BoxDecoration(
+            color: isSelected
+                ? AppColors.red.withAlpha(150)
+                : AppColors.red.withAlpha(90),
+            borderRadius: BorderRadius.circular(15.r),
+          ),
+          child: appTextB1(
+            'Sleepy',
+            color: isSelected ? AppColors.white : AppColors.red.withAlpha(120),
+          ),
+        );
+    }
+  }
 }
