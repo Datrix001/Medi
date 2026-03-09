@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:medi_app/features/ambience/data/model/ambience_model.dart';
 import 'package:medi_app/features/ambience/data/repository/ambience_repository.dart';
 import 'package:medi_app/features/ambience/presentation/cubit/ambience_state.dart';
 
